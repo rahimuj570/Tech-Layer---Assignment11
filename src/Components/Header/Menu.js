@@ -3,15 +3,15 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 
 const Menu = () => {
-  const hideMenuByBg = () => {
-    setMenu(!menu);
-  };
-
   const [menu, setMenu] = useState(false);
+
   const toggleMenu = () => {
     setMenu(!menu);
-    console.log(menu);
   };
+  const hideMenuByBg = () => {
+    setMenu(false);
+  };
+
   return (
     <>
       <div className="relative flex justify-between bg-sky-400 px-5 py-2">
@@ -45,7 +45,7 @@ const Menu = () => {
       </div>
       <li
         onClick={hideMenuByBg}
-        style={{ right: `${menu ? 0 : "-100%"}` }}
+        style={{ left: `${menu ? 0 : "-110%"}` }}
         className="absolute z-0 opacity-5  bg-slate-700 w-screen h-screen duration-300"
       ></li>
     </>
