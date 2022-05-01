@@ -14,12 +14,12 @@ const Menu = () => {
 
   return (
     <>
-      <div className="relative flex justify-between bg-sky-400 px-5 py-2">
+      <div className=" relative flex justify-between bg-sky-400 px-5 py-2">
         <h1 className="text-2xl text-white font-extrabold">Tech Layer</h1>
         <ul className="text-white flex duration-300 ">
           <div
-            style={{ right: `${menu ? 0 : "-100%"}` }}
-            className={`sm:flex sm:static  absolute top-12 bg-sky-400 p-2 duration-300 smax:h-screen  smax:w-3/6 z-10`}
+            style={{ left: `${menu ? 0 : "-100%"}` }}
+            className={`sm:flex sm:static  absolute top-12 bg-sky-400 p-2 duration-300 smax:h-screen  smax:w-3/6 z-20`}
           >
             <li className="ml-3 sm:my-0 my-2 rounded hover:bg-sky-300 duration-300 cursor-pointer font-semibold shadow p-1">
               Home
@@ -46,7 +46,7 @@ const Menu = () => {
       <li
         onClick={hideMenuByBg}
         style={{ left: `${menu ? 0 : "-110%"}` }}
-        className="absolute z-0 opacity-5  bg-slate-700 w-screen h-screen duration-300"
+        className="absolute z-10 opacity-5  bg-slate-700 w-screen h-screen duration-300"
       ></li>
     </>
   );
