@@ -28,10 +28,10 @@ const HeroSlider = () => {
         </h1>
         <div className="mb-6 mt-2 w-36 h-1 bg-slate-700 mx-auto rounded-lg" />
       </div>
-      <div className="sm:w-4/6 w-6/6 sm:mx-auto shadow px-5 mx-2  my-1">
+      <div className="sm:w-4/6 w-6/6 sm:mx-auto shadow px-5 smax:mx-2 my-1">
         <Slider {...settings}>
           {/* ======= Slider Item 1 ======== */}
-          <div className="w-full sm:h-60 ">
+          <div className="w-full sm:h-70 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
                 <h2 className="text-4xl font-bold">
@@ -52,7 +52,7 @@ const HeroSlider = () => {
             </div>
           </div>
           {/* ======= Slider Item 2 ======== */}
-          <div className="w-full sm:h-60 ">
+          <div className="w-full sm:h-70 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
                 <h2 className="text-4xl font-bold">
@@ -73,7 +73,7 @@ const HeroSlider = () => {
             </div>
           </div>
           {/* ======= Slider Item 3 ======== */}
-          <div className="w-full sm:h-60 ">
+          <div className="w-full sm:h-70 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
                 <h2
@@ -98,7 +98,7 @@ const HeroSlider = () => {
             </div>
           </div>
           {/* ======= Slider Item 4 ======== */}
-          <div className="w-full sm:h-60 ">
+          <div className="w-full sm:h-70 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
                 <h2 className="text-4xl font-bold">
@@ -119,7 +119,7 @@ const HeroSlider = () => {
             </div>
           </div>
           {/* ======= Slider Item 5 ======== */}
-          <div className="w-full sm:h-60 ">
+          <div className="w-full sm:h-70 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
                 <h2 className="text-4xl font-bold">
@@ -140,7 +140,7 @@ const HeroSlider = () => {
             </div>
           </div>
           {/* ======= Slider Item 6 ======== */}
-          <div className="w-full sm:h-60 ">
+          <div className="w-full sm:h-70 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
                 <h2 className="text-4xl font-bold">

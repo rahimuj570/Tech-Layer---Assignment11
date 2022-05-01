@@ -2,7 +2,7 @@ import React from "react";
 
 const Product = () => {
   return (
-    <div className="mb-4 bg-white shadow ">
+    <div className="mb-4 rounded bg-white shadow ">
       <div className="overflow-hidden w-4/6 h-48  shadow p-2 m-2 mx-auto ">
         <img
           className="hover:scale-110 duration-300 w-full h-full mx-auto"
