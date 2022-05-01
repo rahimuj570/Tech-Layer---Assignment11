@@ -22,11 +22,11 @@ const HeroSlider = () => {
   };
   return (
     <>
-      <div className="mt-10">
-        <h1 className="text-4xl text-center font-bold text-yellow-400">
+      <div className="mt-16">
+        <h1 className="text-4xl text-center font-extrabold text-slate-700">
           EID DHAMAKA !
         </h1>
-        <div className="mb-6 mt-2 w-36 h-1 bg-yellow-400 mx-auto rounded-lg" />
+        <div className="mb-6 mt-2 w-36 h-1 bg-slate-700 mx-auto rounded-lg" />
       </div>
       <div className="sm:w-4/6 w-6/6 sm:mx-auto shadow px-5 mx-2  my-1">
         <Slider {...settings}>
@@ -34,7 +34,7 @@ const HeroSlider = () => {
           <div className="w-full sm:h-60 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
-                <h2 className="text-4xl font-extrabold">
+                <h2 className="text-4xl font-bold">
                   Meetion MT-CHR15 E-Sport Gaming Chair
                 </h2>
                 <p className="text-red-400 font-bold">
@@ -55,7 +55,7 @@ const HeroSlider = () => {
           <div className="w-full sm:h-60 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
-                <h2 className="text-4xl font-extrabold">
+                <h2 className="text-4xl font-bold">
                   Realme Watch S Global Version
                 </h2>
                 <p className="text-red-400 font-bold">
@@ -101,7 +101,7 @@ const HeroSlider = () => {
           <div className="w-full sm:h-60 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
-                <h2 className="text-4xl font-extrabold">
+                <h2 className="text-4xl font-bold">
                   Turtle Beach Recon 50 GAMING HEADSET
                 </h2>
                 <p className="text-red-400 font-bold">
@@ -122,7 +122,7 @@ const HeroSlider = () => {
           <div className="w-full sm:h-60 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
-                <h2 className="text-4xl font-extrabold">
+                <h2 className="text-4xl font-bold">
                   Sony PlayStation 5 Gaming Console
                 </h2>
                 <p className="text-red-400 font-bold">
@@ -143,7 +143,7 @@ const HeroSlider = () => {
           <div className="w-full sm:h-60 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
-                <h2 className="text-4xl font-extrabold">
+                <h2 className="text-4xl font-bold">
                   God of War, Elden Ring, Horizon
                 </h2>
                 <p className="text-red-400 font-bold">
@@ -153,7 +153,7 @@ const HeroSlider = () => {
                   Eid Price: 2,000 TK
                 </p>
               </div>
-              <div className="h-60 sm:order-2">
+              <div className="h-60  sm:order-2">
                 <img
                   className=" basis-3/6  w-full h-full"
                   src={game3in1}

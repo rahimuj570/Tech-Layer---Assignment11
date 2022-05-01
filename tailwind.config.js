@@ -2,6 +2,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
+      xsmax: { max: "340px" },
       smax: { max: "640px" },
 
       sm: "640px",
