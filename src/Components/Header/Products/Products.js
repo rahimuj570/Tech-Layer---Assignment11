@@ -11,7 +11,7 @@ const Products = () => {
         <div className=" w-36 h-1 bg-slate-700 mx-auto rounded-lg" />
       </div>
 
-      <div className="p-5 rounded grid  gap-2 md:grid-cols-4 sm:grid-cols-2 smax: grid-cols-2 xsmax:grid-cols-1  bg-pink-50">
+      <div className="px-5 py-3 rounded grid  gap-2 md:grid-cols-4 sm:grid-cols-2 smax: grid-cols-2 xsmax:grid-cols-1  bg-pink-50">
         <Product />
         <Product />
         <Product />

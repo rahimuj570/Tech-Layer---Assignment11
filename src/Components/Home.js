@@ -1,5 +1,6 @@
 import React from "react";
 import Brand from "./Brand";
+import Contact from "./Contact";
 import Menu from "./Header/Menu";
 import Products from "./Header/Products/Products";
 import HeroSlider from "./Header/Slider/HeroSlider";
@@ -13,6 +14,7 @@ const Home = () => {
       <Products />
       <Brand />
       <Review />
+      <Contact />
     </>
   );
 };
