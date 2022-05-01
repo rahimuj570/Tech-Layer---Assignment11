@@ -10,6 +10,8 @@
 
 # production
 /build
+requirement.txt
+test.html
 
 # misc
 .DS_Store
