@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Menu = () => {
   const [menu, setMenu] = useState(false);
@@ -27,9 +28,13 @@ const Menu = () => {
         </div>
         <li
           onClick={toggleMenu}
-          className="block sm:hidden ml-3 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold  py-1 px-4"
+          className=" block sm:hidden ml-3 rounded bg-white  text-slate-600 duration-300 cursor-pointer font-bold  py-1 px-4"
         >
-          <HiOutlineMenuAlt1 className="text-2xl" />
+          {!menu ? (
+            <HiOutlineMenuAlt1 className="text-2xl" />
+          ) : (
+            <AiOutlineClose className="text-2xl" />
+          )}
         </li>
       </ul>
     </div>
