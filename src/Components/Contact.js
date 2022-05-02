@@ -9,10 +9,7 @@ const Contact = () => {
         <h1 className="pb-2 text-4xl text-center font-extrabold text-white">
           Contact US
         </h1>
-        <div
-          className=" w-36 
-         bg-white mx-auto"
-        />
+        <div className=" w-36 h-1 bg-white mx-auto rounded-lg" />
       </div>
       <form
         onSubmit={(e) => {
