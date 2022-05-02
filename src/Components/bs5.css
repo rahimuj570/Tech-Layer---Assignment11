@@ -200,3 +200,7 @@
 .carousel-dark .carousel-caption {
   color: #000;
 }
+.slick-prev::before,
+.slick-next::before {
+  color: rgb(218, 221, 0);
+}

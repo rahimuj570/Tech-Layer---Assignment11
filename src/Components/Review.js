@@ -1,7 +1,7 @@
 import React from "react";
 import "./Review.css";
 import { Carousel } from "react-bootstrap";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const Review = () => {
   return (
@@ -16,8 +16,16 @@ const Review = () => {
         <Carousel.Item>
           <div className="w-full p-4 text-gray-800 bg-indigo-600 shadow-md">
             <div className="mb-2">
-              <p className="mb-2 text-center text-gray-100">
-                " They are trusted. I like there services "
+              <p className="flex justify-center font-hand text-xl mb-2 text-center text-gray-100">
+                <sup className="text-3xl font-extrabold">
+                  <FaQuoteLeft />
+                </sup>
+                <span className="mx-2">
+                  They are trusted. I like there services
+                </span>
+                <sup className="text-3xl font-extrbold">
+                  <FaQuoteRight />
+                </sup>
               </p>
               <div className="flex flex-col items-center justify-center">
                 <div className="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full ">
@@ -40,9 +48,17 @@ const Review = () => {
         <Carousel.Item>
           <div className="w-full p-4 text-gray-800 bg-indigo-600 shadow-md">
             <div className="mb-2">
-              <p className="mb-2 text-center text-gray-100">
-                " They are so friendly. I'm so happy to be a customer of Tech
-                Layer "
+              <p className="flex justify-center font-hand text-xl mb-2 text-center text-gray-100">
+                <sup className="text-3xl font-extrabold">
+                  <FaQuoteLeft />
+                </sup>
+                <span className="mx-2">
+                  They are so friendly. I'm so happy to be a customer of Tech
+                  Layer
+                </span>
+                <sup className="text-3xl font-extrabold">
+                  <FaQuoteRight />
+                </sup>
               </p>
               <div className="flex flex-col items-center justify-center">
                 <div className="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full ">
@@ -65,8 +81,17 @@ const Review = () => {
         <Carousel.Item>
           <div className="w-full p-4 text-gray-800 bg-indigo-600 shadow-md">
             <div className="mb-2">
-              <p className="mb-2 text-center text-gray-100">
-                " I will be return soon to deal another product "
+              <p className="flex justify-center font-hand text-xl mb-2 text-center text-gray-100">
+                <sup className="text-3xl font-extrabold">
+                  <FaQuoteLeft />
+                </sup>
+                <span className="mx-2">
+                  I will be return soon to deal another product
+                </span>
+
+                <sup className="text-3xl font-extrabold">
+                  <FaQuoteRight />
+                </sup>
               </p>
               <div className="flex flex-col items-center justify-center">
                 <div className="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full ">
@@ -89,9 +114,16 @@ const Review = () => {
         <Carousel.Item>
           <div className="w-full p-4 text-gray-800 bg-indigo-600 shadow-md">
             <div className="mb-2">
-              <p className="mb-2 text-center text-gray-100">
-                " I will recommend my friend because their service is very Good.
-                "
+              <p className="flex justify-center font-hand text-xl mb-2 text-center text-gray-100">
+                <sup className="text-3xl font-extrabold">
+                  <FaQuoteLeft />
+                </sup>
+                <span className="mx-2">
+                  I will recommend my friend because their service is very Good.
+                </span>
+                <sup className="text-3xl font-extrabold">
+                  <FaQuoteRight />
+                </sup>
               </p>
               <div className="flex flex-col items-center justify-center">
                 <div className="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full ">
@@ -113,8 +145,14 @@ const Review = () => {
         <Carousel.Item>
           <div className="w-full p-4 text-gray-800 bg-indigo-600 shadow-md">
             <div className="mb-2">
-              <p className="mb-2 text-center text-gray-100">
-                " All the Products is genuine and Professional "
+              <p className="flex justify-center font-hand text-xl mb-2 text-center text-gray-100">
+                <sup className="text-3xl font-extrabold">
+                  <FaQuoteLeft />
+                </sup>{" "}
+                All the Products is genuine and Professional{" "}
+                <sup className="text-3xl font-extrabol">
+                  <FaQuoteRight />
+                </sup>
               </p>
               <div className="flex flex-col items-center justify-center">
                 <div className="w-12 h-12 overflow-hidden bg-gray-100 border-2 border-indigo-100 rounded-full ">

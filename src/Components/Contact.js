@@ -1,14 +1,18 @@
 import React from "react";
 import { toast } from "react-toastify";
+import { MdOutgoingMail } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <div className="pb-20 bg-fuchsia-400">
+    <div className=" pb-20 bg-fuchsia-400">
       <div className=" pb-10  bg-fuchsia-400 pt-20">
         <h1 className="pb-2 text-4xl text-center font-extrabold text-white">
           Contact US
         </h1>
-        <div className=" w-36 h-1 bg-white mx-auto" />
+        <div
+          className=" w-36 
+         bg-white mx-auto"
+        />
       </div>
       <form
         onSubmit={(e) => {
@@ -36,11 +40,9 @@ const Contact = () => {
           type="text"
           placeholder="Your Message"
         />
-        <input
-          className="my-2 p-2 rounded shadow-lg bg-white w-1/6 mx-auto hover:text-fuchsia-500 text-base font-semibold duration-300 hover:border-indigo-500 border-2"
-          type="submit"
-          value={"SEND"}
-        />
+        <button className="my-2 px-2 py-1 rounded shadow-lg bg-white sm:w-1/6 w-2/6 mx-auto hover:text-fuchsia-500 text-base font-semibold duration-300 hover:border-indigo-500 border-2 flex items-center justify-center">
+          <span>SEND</span> <MdOutgoingMail className="ml-1 text-2xl" />
+        </button>
       </form>
     </div>
   );

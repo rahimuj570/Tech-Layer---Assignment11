@@ -2,12 +2,13 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import "../../bs5.css";
 
 // ======= Import Slider Images =======
 import watch from "./Img/watch.jpg";
 import chair from "./Img/chair.jpg";
 import set from "./Img/set.jpg";
-import game3in1 from "./Img/game3in1.JPG";
+import game3in1 from "./Img/game3in1.jpg";
 import headphone from "./Img/headphone.jpg";
 import ps5 from "./Img/ps5.jpg";
 
@@ -23,12 +24,12 @@ const HeroSlider = () => {
   return (
     <>
       <div className="mt-16">
-        <h1 className="text-4xl text-center font-extrabold text-slate-700">
+        <h1 className="font-signika text-4xl text-center font-extrabold text-yellow-500">
           EID DHAMAKA !
         </h1>
-        <div className="mb-6 mt-2 w-36 h-1 bg-slate-700 mx-auto rounded-lg" />
+        <div className="mb-6 mt-2 w-36 h-1 bg-yellow-500 mx-auto rounded-lg" />
       </div>
-      <div className="sm:w-4/6 w-6/6 sm:mx-auto shadow px-5 smax:mx-2 my-1">
+      <div className="border-yellow-500 border-2 sm:w-4/6 w-6/6 sm:mx-auto shadow-lg px-5 smax:mx-2 my-1">
         <Slider {...settings}>
           {/* ======= Slider Item 1 ======== */}
           <div className="w-full sm:h-70 ">
@@ -143,23 +144,24 @@ const HeroSlider = () => {
           <div className="w-full sm:h-70 ">
             <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
-                <h2 className="text-4xl font-bold">
-                  God of War, Elden Ring, Horizon
+                <h2
+                  title="God of War, Zero Dawn, Ghost of Tsusima, Last of Us"
+                  className="text-4xl font-bold"
+                >
+                  Four Genuine Action in One Pack...
                 </h2>
                 <p className="text-red-400 font-bold">
-                  Regular Price: 6,000 TK
+                  Regular Price: 8,000 TK
                 </p>
                 <p className="text-green-500 font-bold text-2xl">
-                  Eid Price: 2,000 TK
+                  Eid Price: 4,000 TK
                 </p>
               </div>
-              <div className="h-60  sm:order-2">
-                <img
-                  className=" basis-3/6  w-full h-full"
-                  src={game3in1}
-                  alt=""
-                />
-              </div>
+              <img
+                className="sm:order-2 basis-3/6  w-full"
+                src={game3in1}
+                alt=""
+              />
             </div>
           </div>
         </Slider>

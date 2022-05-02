@@ -13,21 +13,21 @@ const Menu = () => {
   };
 
   return (
-    <div className="sticky top-0 z-30">
-      <div className="py-2 relative items-center flex justify-between bg-indigo-500 px-5 ">
+    <div className="sm:sticky top-0 z-30">
+      <div className="py-2  items-center flex justify-between bg-indigo-500 px-5 ">
         <h1 className="text-2xl text-white font-extrabold">Tech Layer</h1>
         <ul className="mb-0 text-white flex  duration-300">
           <div
             style={{ left: `${menu ? 0 : "-100%"}` }}
             className={`sm:flex sm:static  absolute top-12 bg-indigo-500 duration-300 smax:h-screen  smax:w-3/6 z-20`}
           >
-            <li className="ml-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow">
+            <li className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow">
               Home
             </li>
-            <li className="ml-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow">
+            <li className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow">
               Contact US
             </li>
-            <li className="ml-3 sm:my-0 smax:my-3 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4">
+            <li className="mx-3 sm:my-0 smax:my-3 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4">
               Login
             </li>
           </div>
@@ -46,7 +46,7 @@ const Menu = () => {
       <li
         onClick={hideMenuByBg}
         style={{ left: `${menu ? 0 : "-110%"}` }}
-        className="absolute z-10 opacity-5  bg-slate-700 w-screen h-screen duration-300"
+        className="absolute z-10 opacity-5  bg-slate-700 w-screen smax:h-screen duration-300"
       ></li>
     </div>
   );

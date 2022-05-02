@@ -11,7 +11,7 @@ const Product = () => {
         />
       </div>
       <p className="mb-3 text-2xl text-center font-bold ">Firefox Browser</p>
-      <div className="bg-slate-50 p-2 text-base leading-7">
+      <div className="font-signika bg-slate-50 p-2 text-base leading-7">
         <p className="mb-1">
           <span className="font-bold text-base">Supplier:</span> Firefox
         </p>
@@ -28,7 +28,7 @@ const Product = () => {
           praesentium fuga esse!
         </p>
       </div>
-      <button className="bg-sky-500 text-white  px-2 py-1 hover:bg-sky-400 duration-300 font-bold w-full">
+      <button className="bg-indigo-400 text-white  px-2 py-1 hover:bg-indigo-500 duration-300 font-bold w-full">
         Update
       </button>
     </div>

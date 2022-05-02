@@ -1,6 +1,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+      signika: ["Signika", "sans-serif"],
+      hand: ["Patrick Hand", "cursive"],
+    },
     screens: {
       xsmax: { max: "340px" },
       smax: { max: "640px" },

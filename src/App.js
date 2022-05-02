@@ -7,7 +7,7 @@ import Footer from "./Components/Footer";
 
 function App() {
   return (
-    <div className="">
+    <div className="font-poppins">
       <ToastContainer
         position="top-right"
         autoClose={3000}
