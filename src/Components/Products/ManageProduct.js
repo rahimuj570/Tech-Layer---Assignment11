@@ -1,7 +1,9 @@
 import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const ManageProduct = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className=" pb-10 mt-16 ">
@@ -9,6 +11,15 @@ const ManageProduct = () => {
           MANAGE PRODUCTS
         </h1>
         <div className=" w-36 h-1 bg-indigo-400 mx-auto rounded-lg" />
+      </div>
+
+      <div className="mb-5 text-center">
+        <button
+          onClick={() => navigate("/add")}
+          className="p-1 font-semibold hover:bg-indigo-400 hover:text-white duration-300 hover:border-white sm:w-2/6 w-5/6 bg-white border-indigo-400 border-4 text-indigo-400"
+        >
+          Add New Products
+        </button>
       </div>
 
       <div className="pb-20 relative overflow-x-auto shadow-md sm:rounded-lg">

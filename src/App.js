@@ -11,6 +11,7 @@ import Signup from "./Components/User_Management/Signup";
 import ResetPass from "./Components/User_Management/ResetPass";
 import Update from "./Components/Products/Update";
 import ManageProduct from "./Components/Products/ManageProduct";
+import AddProduct from "./Components/Products/AddProduct";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/reset_pass" element={<ResetPass />}></Route>
         <Route path="/update/:id" element={<Update />}></Route>
         <Route path="/manage_products" element={<ManageProduct />}></Route>
+        <Route path="/add" element={<AddProduct />}></Route>
       </Routes>
       <Footer />
       <ToastContainer
