@@ -29,7 +29,7 @@ const Signup = () => {
     await createUserWithEmailAndPassword(data.Email, data.Password);
     await updateProfile({ displayName: data.Name });
     reset();
-    // navigate(from, { replace: true });
+    navigate(from, { replace: true });
   };
 
   const [createUserWithEmailAndPassword, user, loading, error] =

@@ -9,6 +9,8 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./Components/User_Management/Login";
 import Signup from "./Components/User_Management/Signup";
 import ResetPass from "./Components/User_Management/ResetPass";
+import Update from "./Components/Products/Update";
+import ManageProduct from "./Components/Products/ManageProduct";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/reset_pass" element={<ResetPass />}></Route>
+        <Route path="/update/:id" element={<Update />}></Route>
+        <Route path="/manage_products" element={<ManageProduct />}></Route>
       </Routes>
       <Footer />
       <ToastContainer
