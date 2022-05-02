@@ -1,15 +1,13 @@
 import React from "react";
 import Brand from "./Brand";
 import Contact from "./Contact";
-import Menu from "./Header/Menu";
-import Products from "./Header/Products/Products";
+import Products from "./Products/Products";
 import HeroSlider from "./Header/Slider/HeroSlider";
-import Review from "./Review";
+import Review from "./Review/Review";
 
 const Home = () => {
   return (
     <>
-      <Menu />
       <HeroSlider />
       <Products />
       <Brand />
