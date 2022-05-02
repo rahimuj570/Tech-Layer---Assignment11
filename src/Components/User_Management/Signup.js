@@ -1,19 +1,41 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import auth from "../../firebase.int";
 import SocialLogin from "./SocialLogin";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 
 const Signup = () => {
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
+
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors.ConfirmPass);
+  const onSubmit = async (data) => {
+    if (data.Password !== data.ConfirmPass)
+      return toast.error("Confirm Password Is'nt Same !");
+    await createUserWithEmailAndPassword(data.Email, data.Password);
+    await updateProfile({ displayName: data.Name });
+    reset();
+    navigate(from, { replace: true });
+  };
+
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
   return (
     <>
       <div className=" pb-10 mt-16 ">
