@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
   const {
     register,
@@ -97,10 +99,16 @@ const Login = () => {
           />
         </form>
         <div className="mb-5 items-center mt-5 w-4/6 mx-auto flex justify-center ">
-          <p className="font-bold hover:text-sky-400 duration-300 hover:no-underline mr-5 text-sky-600 underline cursor-pointer">
+          <p
+            onClick={() => navigate("/reset_pass")}
+            className="font-bold hover:text-sky-400 duration-300 hover:no-underline mr-5 text-sky-600 underline cursor-pointer"
+          >
             Forgot Password?
           </p>
-          <p className="font-bold hover:text-sky-400 duration-300 hover:no-underline ml-5 text-sky-600 underline cursor-pointer">
+          <p
+            onClick={() => navigate("/signup")}
+            className="font-bold hover:text-sky-400 duration-300 hover:no-underline ml-5 text-sky-600 underline cursor-pointer"
+          >
             Don't have an Account?
           </p>
         </div>
