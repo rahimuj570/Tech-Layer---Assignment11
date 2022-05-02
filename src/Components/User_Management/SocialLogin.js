@@ -1,7 +1,22 @@
 import React from "react";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { FcGoogle } from "react-icons/fc";
+import { toast } from "react-toastify";
+import auth from "../../firebase.int";
+import Loading from "../Loading";
 
 const SocialLogin = () => {
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
+  // ======== Loading =============
+  if (loading) {
+    return <Loading />;
+  }
+
+  // ============ Error =======
+  if (error) {
+    toast.error("Something Went Wrong!");
+  }
   return (
     <>
       <div className="mt-10 md:w-2/6 sm:w-3/6 w-5/6 mx-auto flex items-center justify-center">
@@ -11,7 +26,10 @@ const SocialLogin = () => {
       </div>
 
       <div className="pb-10 md:w-2/6 sm:w-3/6 smax:w-6/6 mt-5 flex flex-col  mx-auto">
-        <div className="hover:bg-slate-50 duration-300 py-2 px-1 rounded cursor-pointer shadow flex justify-center  items-center">
+        <div
+          onClick={() => signInWithGoogle()}
+          className="hover:bg-slate-50 duration-300 py-2 px-1 rounded cursor-pointer shadow flex justify-center  items-center"
+        >
           <FcGoogle className="mr-2 basis-10  sm:text-4xl text-2xl" />
           <span className=" smax:text-xl text-2xl font-bold">
             Continue With Google
