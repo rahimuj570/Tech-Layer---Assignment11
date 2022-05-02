@@ -1,18 +1,48 @@
 import React, { useState } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import auth from "../../firebase.int";
+import Loading from "../Loading";
 import SocialLogin from "./SocialLogin";
 
 const Login = () => {
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  // ========= Loading ============
+  if (loading) {
+    return <Loading />;
+  }
+
+  // ========= Error ============
+  if (error) {
+    if (error.code === "auth/user-not-found") {
+      toast.error("User Not Found !");
+    }
+    if (error.code === "auth/wrong-password") {
+      toast.error("Password is Wrong !. ");
+    }
+  }
+
+  const onSubmit = async (data) => {
+    await signInWithEmailAndPassword(data.Email, data.Password);
+    reset();
+    // navigate(from, { replace: true });
+  };
+
   return (
     <>
       <div className=" pb-10 mt-16 ">
