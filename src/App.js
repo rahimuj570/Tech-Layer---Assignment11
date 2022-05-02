@@ -13,6 +13,14 @@ import ResetPass from "./Components/User_Management/ResetPass";
 function App() {
   return (
     <div className="font-poppins">
+      <Menu />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/reset_pass" element={<ResetPass />}></Route>
+      </Routes>
+      <Footer />
       <ToastContainer
         position="top-right"
         autoClose={3000}
@@ -24,14 +32,6 @@ function App() {
         draggable
         pauseOnHover
       />
-      <Menu />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/reset_pass" element={<ResetPass />}></Route>
-      </Routes>
-      <Footer />
     </div>
   );
 }

@@ -9,6 +9,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import Loading from "../Loading";
 
 const Signup = () => {
   let location = useLocation();
@@ -28,13 +29,24 @@ const Signup = () => {
     await createUserWithEmailAndPassword(data.Email, data.Password);
     await updateProfile({ displayName: data.Name });
     reset();
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
   };
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+  // ========== Loading =========
+  if (loading || updating) {
+    return <Loading />;
+  }
+
+  // ========== Error =========
+  if (error) {
+    if (error.code === "auth/email-already-in-use")
+      toast.error("Email Already Registered !");
+  }
 
   return (
     <>

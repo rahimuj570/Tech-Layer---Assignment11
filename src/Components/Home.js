@@ -9,7 +9,6 @@ import Loading from "./Loading";
 const Home = () => {
   return (
     <>
-      <Loading />
       <HeroSlider />
       <Products />
       <Brand />

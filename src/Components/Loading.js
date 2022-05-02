@@ -6,7 +6,7 @@ const Loading = () => {
       <div className="fixed z-40 h-full w-full bg-slate-900 opacity-30"></div>
       <svg
         role="status"
-        className="mx-auto fixed z-50 inset-x-0 top-2/4 items-center justify-center w-20 h-20  text-white animate-spin dark:text-gray-600 fill-blue-600"
+        className="mx-auto fixed z-50 inset-x-0 top-2/4  w-20 h-20  text-white animate-spin dark:text-gray-600 fill-blue-600"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
