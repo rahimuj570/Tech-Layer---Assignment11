@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import auth from "../../firebase.int";
+import Loading from "../Loading";
 
 const ResetPass = () => {
+  const [sendPasswordResetEmail, sending, error] =
+    useSendPasswordResetEmail(auth);
   const navigate = useNavigate();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  // ========= Loading =========
+  if (sending) {
+    return <Loading />;
+  }
+
+  // ========= Error =========
+  if (error) toast.error("User Not Found !");
+
+  const onSubmit = async (data) => {
+    await sendPasswordResetEmail(data.Email);
+    toast.success("Check Your Email");
+  };
+
   return (
     <>
       <div className=" pb-10 mt-16 ">
@@ -47,9 +66,10 @@ const ResetPass = () => {
             )}
           </div>
           <input
-            className="shadow mx-auto w-2/6 rounded bg-indigo-400 text-white hover:bg-indigo-300 my-1 p-1"
+            className={`bg-indigo-400 hover:bg-indigo-300"
+            } shadow mx-auto w-2/6 rounded  text-white my-1 p-1`}
             type="submit"
-            value={"Reset"}
+            value={"RESET"}
           />
         </form>
         <div className="mt-5 mb-10 text-center">
