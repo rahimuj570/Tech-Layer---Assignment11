@@ -42,6 +42,18 @@ const AddProduct = () => {
           />
         </div>
         <div className="mb-4 flex flex-col">
+          <label htmlFor="image">Product Image</label>
+          <input
+            type={"text"}
+            placeholder="Your Product Image"
+            id="image"
+            className="text-sm border-2 bg-slate-200 my-1 p-1"
+            {...register("image", {
+              required: true,
+            })}
+          />
+        </div>
+        <div className="mb-4 flex flex-col">
           <label htmlFor="quantity">Quantity</label>
           <input
             type={"number"}

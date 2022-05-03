@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Product from "./Product";
 
 const Products = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="bg-cyan-50 pb-10 mt-20 pt-20">
@@ -18,7 +20,10 @@ const Products = () => {
         <Product />
       </div>
       <div className="bg-cyan-50 pb-20  text-center">
-        <button className="p-1 font-semibold hover:bg-indigo-400 hover:text-white duration-300 hover:border-white sm:w-2/6 w-5/6 bg-white border-indigo-400 border-4 text-indigo-400">
+        <button
+          onClick={() => navigate("/manage_products")}
+          className="p-1 font-semibold hover:bg-indigo-400 hover:text-white duration-300 hover:border-white sm:w-2/6 w-5/6 bg-white border-indigo-400 border-4 text-indigo-400"
+        >
           Manage Products
         </button>
       </div>

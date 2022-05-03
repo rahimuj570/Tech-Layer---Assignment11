@@ -33,6 +33,9 @@ const ManageProduct = () => {
                 Product name
               </th>
               <th scope="col" className="px-6 py-3">
+                Supplier name
+              </th>
+              <th scope="col" className="px-6 py-3">
                 Quantity
               </th>
               <th scope="col" className="px-6 py-3">
@@ -58,6 +61,7 @@ const ManageProduct = () => {
               >
                 Apple MacBook Pro 17"
               </th>
+              <td className="px-6 py-4">HP</td>
               <td className="px-6 py-4">Laptop</td>
               <td className="px-6 py-4">$2999</td>
               <td className="px-6 py-4 text-right">

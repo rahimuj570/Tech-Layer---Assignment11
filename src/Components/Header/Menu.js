@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import auth from "../../firebase.int";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -32,19 +32,40 @@ const Menu = () => {
             style={{ left: `${menu ? 0 : "-100%"}` }}
             className={`sm:flex sm:static  absolute top-12 bg-indigo-500 duration-300 smax:h-screen  smax:w-3/6 z-20`}
           >
-            <li className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow">
+            <Link
+              to={"/"}
+              className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
+            >
               Home
-            </li>
-            <li className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow">
-              Contact US
-            </li>
+            </Link>
+
             {user ? (
-              <li
-                onClick={() => signOut(auth)}
-                className="mx-3 sm:my-0 smax:my-3 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4"
-              >
-                Logout
-              </li>
+              <>
+                <Link
+                  to={"/manage_products"}
+                  className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
+                >
+                  Manage Items
+                </Link>
+                <Link
+                  to={"/my_products"}
+                  className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
+                >
+                  My Items
+                </Link>
+                <Link
+                  to={"/add"}
+                  className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
+                >
+                  Add Items
+                </Link>
+                <li
+                  onClick={() => signOut(auth)}
+                  className="mx-3 sm:my-0 smax:my-3 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4"
+                >
+                  Logout
+                </li>
+              </>
             ) : (
               <li
                 onClick={() => navigate("/login")}
