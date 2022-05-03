@@ -12,6 +12,8 @@ import ResetPass from "./Components/User_Management/ResetPass";
 import Update from "./Components/Products/Update";
 import ManageProduct from "./Components/Products/ManageProduct";
 import AddProduct from "./Components/Products/AddProduct";
+import MyProducts from "./Components/Products/MyProducts";
+import NotFound404 from "./Components/NotFound404/NotFound404";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
         <Route path="/update/:id" element={<Update />}></Route>
         <Route path="/manage_products" element={<ManageProduct />}></Route>
         <Route path="/add" element={<AddProduct />}></Route>
+        <Route path="/my_products" element={<MyProducts />}></Route>
+        <Route path="*" element={<NotFound404 />}></Route>
       </Routes>
       <Footer />
       <ToastContainer
