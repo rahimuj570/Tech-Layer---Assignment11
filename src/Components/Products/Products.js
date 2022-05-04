@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import useGetData from "../../Hooks/useGetData";
 import Product from "./Product";
 
 const Products = () => {
   const navigate = useNavigate();
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/product")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+
   return (
     <>
       <div className="bg-cyan-50 pb-10 mt-20 pt-20">
@@ -20,7 +16,7 @@ const Products = () => {
       </div>
 
       <div className="px-5 py-3 rounded grid  sm:gap-5 gap-3 md:grid-cols-4 sm:grid-cols-2 smax: grid-cols-2 xsmax:grid-cols-1  bg-cyan-50">
-        {products?.map((product) => (
+        {useGetData()?.map((product) => (
           <Product key={product._id} product={product} />
         ))}
       </div>

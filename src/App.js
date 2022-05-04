@@ -10,7 +10,7 @@ import Login from "./Components/User_Management/Login";
 import Signup from "./Components/User_Management/Signup";
 import ResetPass from "./Components/User_Management/ResetPass";
 import Update from "./Components/Products/Update";
-import ManageProduct from "./Components/Products/ManageProduct";
+import ManageProduct from "./Components/Products/ManageProducts";
 import AddProduct from "./Components/Products/AddProduct";
 import MyProducts from "./Components/Products/MyProducts";
 import NotFound404 from "./Components/NotFound404/NotFound404";
