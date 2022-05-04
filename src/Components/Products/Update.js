@@ -1,30 +1,63 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Update = () => {
+  const getInputQuantity = useRef();
   const { id } = useParams();
   const [singlePD, setSinglePD] = useState([]);
   const { _id, name, quantity, price, image, supplier, info } = singlePD;
+  const [stockStatus, setStockStatus] = useState(true);
+  const [reFetch, setReFetch] = useState(false);
 
+  // ======== Get Selected Product =======
   useEffect(() => {
     const url = `http://localhost:5000/product/${id}`;
     fetch(url).then((res) => res.json().then((data) => setSinglePD(data)));
-  }, []);
+    if (quantity > 0) {
+      setStockStatus(true);
+    } else {
+      setStockStatus(false);
+    }
+  }, [reFetch]);
 
-  // =========== Form Action ==========
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-    reset,
-  } = useForm();
-  const onSubmit = async (data) => {
-    console.log(data);
-    // reset();
-    toast.success("Product Added");
+  // ========= Update Quantity =========
+  const quantityUpdateAction = (latestData) => {
+    const url = `http://localhost:5000/update/${id}`;
+    fetch(url, {
+      method: "put",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(latestData),
+    }).then((res) => res.json().then((data) => setReFetch(!reFetch)));
+  };
+
+  const quantityAction = (type) => {
+    const inputQuantity = parseInt(getInputQuantity.current.value);
+    const existQuantity = parseInt(quantity);
+    if (inputQuantity > 0) {
+      if (type === "add-stock") {
+        const newQuantity = inputQuantity + existQuantity;
+        const prevData = { ...singlePD };
+        prevData.quantity = newQuantity;
+        quantityUpdateAction(prevData);
+      } else {
+        if (existQuantity >= inputQuantity) {
+          const newQuantity = existQuantity - inputQuantity;
+
+          const prevData = { ...singlePD };
+          prevData.quantity = newQuantity;
+          quantityUpdateAction(prevData);
+        } else {
+          toast.error("You Haven't Enough Product to Deliver!");
+          return;
+        }
+      }
+    } else {
+      toast.error("Please Input a Valid Number");
+      return;
+    }
   };
 
   return (
@@ -51,14 +84,27 @@ const Update = () => {
                   <span className="font-bold font-signika">Supplier: </span>
                   <span>{supplier}</span>
                 </li>
+                <li>
+                  <span className="font-bold font-signika">Stock: </span>
+                  <span>{stockStatus ? "Available" : "Stock Out"}</span>
+                </li>
               </ul>
               <p className="text-xl">{info}</p>
 
               <form
-                onSubmit={handleSubmit(onSubmit)}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                }}
                 className="shadow-lg rounded-3xl px-1 items-center flex flex-col py-5 mt-2"
               >
                 <input
+                  ref={getInputQuantity}
+                  title="Input Product Quantity to Deliver/Add-Stock"
+                  className="w-full  border-2  rounded-md  p-1 border-sky-500"
+                  type="number"
+                  placeholder="Input Product Quantity to Deliver/Add-Stock"
+                />
+                {/* <input
                   title="Input Product Quantity to Deliver/Add-Stock"
                   className="w-full  border-2  rounded-md  p-1 border-sky-500"
                   type="number"
@@ -77,16 +123,16 @@ const Update = () => {
                   <p className="text-sm text-red-400">
                     * Please Input a Valid Data
                   </p>
-                )}
+                )} */}
                 <div className="mt-2">
                   <button
-                    href="#"
+                    onClick={() => quantityAction("delivery")}
                     className="smax:text-sm xsmax:px-2 text-white rounded-full py-2 px-5 text-lg font-semibold bg-purple-600 hover:bg-transparent  hover:text duration-300 hover:text-purple-600 inline-block border border-purple-600 mr-3"
                   >
                     Delivery
                   </button>
                   <button
-                    href="#"
+                    onClick={() => quantityAction("add-stock")}
                     className="smax:text-sm xsmax:px-2 text-white duration-300 rounded-full py-2 px-5 text-lg font-semibold bg-green-400 inline-block border hover:bg-white hover:text-black"
                   >
                     Add Stock
