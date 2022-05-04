@@ -36,8 +36,22 @@ function App() {
         ></Route>
 
         <Route path="/manage_products" element={<ManageProduct />}></Route>
-        <Route path="/add" element={<AddProduct />}></Route>
-        <Route path="/my_products" element={<MyProducts />}></Route>
+        <Route
+          path="/add"
+          element={
+            <RequireAuth>
+              <AddProduct />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/my_products"
+          element={
+            <RequireAuth>
+              <MyProducts />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="*" element={<NotFound404 />}></Route>
       </Routes>
       <Footer />

@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import auth from "../../firebase.int";
 
 const AddProduct = () => {
-  const navigate = useNavigate();
+  const [user] = useAuthState(auth);
+
   const {
     register,
     formState: { errors },
@@ -12,7 +14,7 @@ const AddProduct = () => {
     reset,
   } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
+    data.uid = user.uid;
     const url = `http://localhost:5000/add`;
     fetch(url, {
       method: "POST",

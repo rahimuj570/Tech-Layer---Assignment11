@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useGetData from "../../Hooks/useGetData";
-import ManageProducts from "./ManageProduct";
-import Product from "./Product";
 import { FaRegTrashAlt } from "react-icons/fa";
 
 const ManageProduct = () => {
