@@ -42,6 +42,7 @@ const Update = () => {
         const prevData = { ...singlePD };
         prevData.quantity = newQuantity;
         quantityUpdateAction(prevData);
+        toast.success("Successfully Added");
       } else {
         if (existQuantity >= inputQuantity) {
           const newQuantity = existQuantity - inputQuantity;
@@ -49,6 +50,7 @@ const Update = () => {
           const prevData = { ...singlePD };
           prevData.quantity = newQuantity;
           quantityUpdateAction(prevData);
+          toast.success("Successfully Delivered");
         } else {
           toast.error("You Haven't Enough Product to Deliver!");
           return;
@@ -76,8 +78,8 @@ const Update = () => {
                 </li>
                 <li>
                   <span className="font-bold font-signika">Quantity: </span>
-                  <span>{`${quantity} ${
-                    quantity < 2 ? "Items" : "Items"
+                  <span>{`${parseInt(quantity)} ${
+                    parseInt(quantity) < 2 ? "Item" : "Items"
                   }`}</span>
                 </li>
                 <li>
@@ -94,10 +96,12 @@ const Update = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
+                  e.target.reset();
                 }}
                 className="shadow-lg rounded-3xl px-1 items-center flex flex-col py-5 mt-2"
               >
                 <input
+                  name="quantity"
                   ref={getInputQuantity}
                   title="Input Product Quantity to Deliver/Add-Stock"
                   className="w-full  border-2  rounded-md  p-1 border-sky-500"
