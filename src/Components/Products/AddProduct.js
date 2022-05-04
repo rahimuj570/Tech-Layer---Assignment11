@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -13,9 +13,25 @@ const AddProduct = () => {
   } = useForm();
   const onSubmit = async (data) => {
     console.log(data);
-    reset();
+    const url = `http://localhost:5000/add`;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
+    // reset();
     toast.success("Product Added");
   };
+
+  useEffect(() => {
+    fetch("http://localhost:500/add");
+  }, []);
   return (
     <>
       <div className="pb-10 mt-16 ">
