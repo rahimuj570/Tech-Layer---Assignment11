@@ -15,7 +15,9 @@ const Product = ({ product }) => {
               alt={name}
             />
           </div>
-          <p className="mb-3 text-2xl text-center font-bold ">{name}</p>
+          <p title={name} className="mb-3 text-2xl text-center font-bold ">
+            {name.length > 40 ? name.slice(0, 40) + "..." : name}
+          </p>
         </div>
         <div className="font-signika p-2 text-base leading-7">
           <p className="mb-1">
@@ -29,7 +31,16 @@ const Product = ({ product }) => {
           </p>
           <p className="mb-1">
             <span className="font-bold text-base">Short Info: </span>
-            {info}
+            {info.length > 100 ? info.slice(0, 100) : info}
+            {info.length > 100 && (
+              <span
+                className=" whitespace-nowrap  cursor-pointer font-bold"
+                onClick={() => navigate(`/update/${_id}`)}
+              >
+                {" "}
+                ...See More
+              </span>
+            )}
           </p>
         </div>{" "}
       </div>

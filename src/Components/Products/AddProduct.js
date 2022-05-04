@@ -24,9 +24,7 @@ const AddProduct = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => {
-        console.log(result);
-      });
+      .then((result) => {});
     reset();
     toast.success("Product Added");
   };
