@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { _id, name, quentity, price, image, supplier, info } = product;
+  const { _id, name, quantity, price, image, supplier, info } = product;
   const navigate = useNavigate();
   return (
     <div className="bg-slate-50 flex flex-col justify-between mb-4 rounded  shadow ">
@@ -25,7 +25,7 @@ const Product = ({ product }) => {
             <span className="font-bold text-base">Price: </span> {price}TK
           </p>
           <p className="mb-1">
-            <span className="font-bold text-base">Quantity: </span> {quentity}
+            <span className="font-bold text-base">Quantity: </span> {quantity}
           </p>
           <p className="mb-1">
             <span className="font-bold text-base">Short Info: </span>

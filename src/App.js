@@ -14,6 +14,7 @@ import ManageProduct from "./Components/Products/ManageProduct";
 import AddProduct from "./Components/Products/AddProduct";
 import MyProducts from "./Components/Products/MyProducts";
 import NotFound404 from "./Components/NotFound404/NotFound404";
+import RequireAuth from "./Components/User_Management/RequireAuth";
 
 function App() {
   return (
@@ -24,7 +25,16 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/reset_pass" element={<ResetPass />}></Route>
-        <Route path="/update/:id" element={<Update />}></Route>
+
+        <Route
+          path="/update/:id"
+          element={
+            <RequireAuth>
+              <Update />
+            </RequireAuth>
+          }
+        ></Route>
+
         <Route path="/manage_products" element={<ManageProduct />}></Route>
         <Route path="/add" element={<AddProduct />}></Route>
         <Route path="/my_products" element={<MyProducts />}></Route>
