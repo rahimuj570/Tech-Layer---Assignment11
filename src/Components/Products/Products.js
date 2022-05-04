@@ -16,7 +16,7 @@ const Products = () => {
       </div>
 
       <div className="px-5 py-3 rounded grid  sm:gap-5 gap-3 md:grid-cols-4 sm:grid-cols-2 smax: grid-cols-2 xsmax:grid-cols-1  bg-cyan-50">
-        {useGetData()?.map((product) => (
+        {useGetData()[0]?.map((product) => (
           <Product key={product._id} product={product} />
         ))}
       </div>

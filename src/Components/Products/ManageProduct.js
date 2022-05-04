@@ -3,6 +3,13 @@ import { FaRegTrashAlt } from "react-icons/fa";
 
 const ManageProducts = ({ product }) => {
   const { _id, name, price, supplier, image, quantity } = product;
+
+  // ======== Delete Action =======
+  const deleteAction = () => {
+    fetch(`http://localhost:5000/delete/${_id}`, {
+      method: "DELETE",
+    });
+  };
   return (
     <>
       <tr className="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
@@ -19,10 +26,12 @@ const ManageProducts = ({ product }) => {
         <td className="px-6 py-4">{quantity}</td>
         <td className="px-6 py-4">{price}</td>
         <td className="px-6 py-4 text-right">
-          <FaRegTrashAlt
-            title="Delete"
-            className="text-red-600 cursor-pointer hover:text-red-500 text-2xl"
-          />
+          <div onClick={deleteAction}>
+            <FaRegTrashAlt
+              title="Delete"
+              className="text-red-600 cursor-pointer hover:text-red-500 text-2xl"
+            />
+          </div>
         </td>
       </tr>
     </>
