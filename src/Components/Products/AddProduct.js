@@ -91,13 +91,13 @@ const AddProduct = () => {
         <div className="mb-4 flex flex-col">
           <label htmlFor="price">Product Price</label>
           <input
-            type={"number"}
+            type={"text"}
             placeholder="Per Product Price"
             id="price"
             className="text-sm border-2 bg-slate-200 my-1 p-1"
             {...register("price", {
               required: true,
-              pattern: /^[1-9]/,
+              pattern: /^[1-9]|^,/,
             })}
           />
           {errors.price?.type === "required" && (
