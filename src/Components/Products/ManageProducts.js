@@ -2,29 +2,32 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useGetData from "../../Hooks/useGetData";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const ManageProduct = () => {
   const navigate = useNavigate();
-  // const [reFetch, setReFetch] = useState(false);
   const [products, setProducts] = useGetData();
-
-  // useEffect(() => {
-  //   const url = `http://localhost:5000/product/`;
-  //   fetch(url)
-  //     .then((res) => res.json())
-  //     .then((data) => setProducts(data));
-  // }, [reFetch]);
 
   // ======== Delete Action =======
   const deleteAction = (id) => {
-    fetch(`http://localhost:5000/delete/${id}`, {
-      method: "DELETE",
-    }).then((res) =>
-      res.json().then((data) => {
-        const remainingPD = products.filter((product) => product._id !== id);
-        setProducts(remainingPD);
-      })
-    );
+    const confirm = prompt(
+      `Are you sure to delete (${
+        products.find((product) => product._id === id).name
+      })? Then type "DELETE" to confirm your action.`
+    ).toLocaleUpperCase();
+    if (confirm === "DELETE") {
+      fetch(`http://localhost:5000/delete/${id}`, {
+        method: "DELETE",
+      }).then((res) =>
+        res.json().then((data) => {
+          const remainingPD = products.filter((product) => product._id !== id);
+          setProducts(remainingPD);
+        })
+      );
+    } else {
+      toast.error(`Type "DELETE" in Uppercase to Delete This Product`);
+      return;
+    }
   };
   return (
     <>
