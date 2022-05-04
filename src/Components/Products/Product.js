@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
   const { _id, name, quentity, price, image, supplier, info } = product;
+  const navigate = useNavigate();
   return (
     <div className="bg-slate-50 flex flex-col justify-between mb-4 rounded  shadow ">
       <div className="">
@@ -31,7 +33,10 @@ const Product = ({ product }) => {
           </p>
         </div>{" "}
       </div>
-      <button className="bg-indigo-400 text-white  px-2 py-1 hover:bg-indigo-500 duration-300 font-bold w-full">
+      <button
+        onClick={() => navigate(`/update/${_id}`)}
+        className="bg-indigo-400 text-white  px-2 py-1 hover:bg-indigo-500 duration-300 font-bold w-full"
+      >
         Update
       </button>
     </div>
