@@ -24,14 +24,13 @@ const AddProduct = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => {});
+      .then((result) => {
+        console.log(result);
+      });
     reset();
     toast.success("Product Added");
   };
 
-  useEffect(() => {
-    fetch("http://localhost:500/add");
-  }, []);
   return (
     <>
       <div className="pb-10 mt-16 ">
@@ -118,10 +117,7 @@ const AddProduct = () => {
             placeholder="Product Supplier Name"
             id="supplier"
             className="text-sm border-2 bg-slate-200 border-sky-300 my-1 p-1"
-            {...register("supplier", {
-              required: true,
-              pattern: /[A-Z]|[a-z]{2}/,
-            })}
+            {...register("supplier")}
           />
           {errors.supplier?.type === "required" && (
             <p className="text-sm text-red-400">

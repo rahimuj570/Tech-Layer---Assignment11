@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -22,6 +22,20 @@ const Login = () => {
     reset,
   } = useForm();
 
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/login", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       email: user?.email,
+  //     }),
+  //     headers: {
+  //       "Content-type": "application/json",
+  //     },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => console.log("data"));
+  // }, [user]);
+
   // ========= Loading ============
   if (loading) {
     return <Loading />;
@@ -35,7 +49,24 @@ const Login = () => {
       toast.error("Password is Wrong !. ");
     }
   } else {
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
+  }
+
+  if (user) {
+    fetch("http://localhost:5000/login/", {
+      method: "POST",
+      body: JSON.stringify({
+        email: user.user.email,
+      }),
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        localStorage.setItem("accessToken", data.token);
+        navigate(from, { replace: true });
+      });
   }
 
   const onSubmit = async (data) => {
