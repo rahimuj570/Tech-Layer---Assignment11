@@ -15,7 +15,10 @@ const Product = ({ product }) => {
               alt={name}
             />
           </div>
-          <p title={name} className="mb-3 text-2xl text-center font-bold ">
+          <p
+            title={name}
+            className="smax:text-xl mb-3 text-2xl text-center font-bold "
+          >
             {name.length > 40 ? name.slice(0, 40) + "..." : name}
           </p>
         </div>

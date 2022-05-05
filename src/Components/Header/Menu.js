@@ -19,8 +19,8 @@ const Menu = () => {
   };
 
   return (
-    <div className="sm:sticky top-0 z-30">
-      <div className="py-2  items-center flex justify-between bg-indigo-500 px-5 ">
+    <div className="md:sticky top-0 z-30">
+      <div className="py-2 items-center flex justify-between bg-indigo-500 px-5 ">
         <h1
           onClick={() => navigate("/")}
           className="cursor-pointer text-2xl text-white font-extrabold"
@@ -30,11 +30,11 @@ const Menu = () => {
         <ul className="mb-0 text-white flex  duration-300">
           <div
             style={{ left: `${menu ? 0 : "-100%"}` }}
-            className={`sm:flex sm:static  absolute top-12 bg-indigo-500 duration-300 smax:h-screen  smax:w-3/6 z-20`}
+            className={`flex md:static  absolute top-12 bg-indigo-500 duration-300 mdmax:h-screen mdmax:flex-col mdmax:w-4/6 z-20 mdmax:pt-5`}
           >
             <Link
               to={"/"}
-              className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
+              className="mx-3 md:my-0 mdmax:my-2 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
             >
               Home
             </Link>
@@ -43,25 +43,25 @@ const Menu = () => {
               <>
                 <Link
                   to={"/manage_products"}
-                  className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
+                  className="mx-3 md:my-0 mdmax:my-2 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
                 >
                   Manage Items
                 </Link>
                 <Link
                   to={"/my_products"}
-                  className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
+                  className="mx-3 md:my-0 mdmax:my-2 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
                 >
                   My Items
                 </Link>
                 <Link
                   to={"/add"}
-                  className="mx-3 sm:my-0 smax:my-3 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
+                  className="mx-3 md:my-0 mdmax:my-2 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
                 >
                   Add Items
                 </Link>
                 <li
                   onClick={() => signOut(auth)}
-                  className="mx-3 sm:my-0 smax:my-3 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4"
+                  className="mx-3 md:my-0 mdmax:my-2 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4"
                 >
                   Logout
                 </li>
@@ -69,7 +69,7 @@ const Menu = () => {
             ) : (
               <li
                 onClick={() => navigate("/login")}
-                className="mx-3 sm:my-0 smax:my-3 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4"
+                className="mx-3 md:my-0 mdmax:my-2 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4"
               >
                 Login
               </li>
@@ -77,7 +77,7 @@ const Menu = () => {
           </div>
           <li
             onClick={toggleMenu}
-            className=" block sm:hidden rounded bg-white  text-slate-600 duration-300 cursor-pointer font-bold  py-1 px-4"
+            className=" block md:hidden rounded bg-white  text-slate-600 duration-300 cursor-pointer font-bold  py-1 px-4"
           >
             {!menu ? (
               <HiOutlineMenuAlt1 className="text-2xl" />
@@ -90,7 +90,7 @@ const Menu = () => {
       <li
         onClick={hideMenuByBg}
         style={{ left: `${menu ? 0 : "-110%"}` }}
-        className="absolute z-10 opacity-5  bg-slate-700 w-screen smax:h-screen duration-300"
+        className="absolute z-10 opacity-5  bg-slate-700 w-screen mdmax:h-screen duration-300"
       ></li>
     </div>
   );

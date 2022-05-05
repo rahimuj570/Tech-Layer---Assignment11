@@ -1,0 +1,14 @@
+import { useEffect, useState } from "react";
+
+const useGetHomeData = (id) => {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const url = `http://localhost:5000/product/home`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+  return [products, setProducts];
+};
+
+export default useGetHomeData;
