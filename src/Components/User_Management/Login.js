@@ -31,16 +31,16 @@ const Login = () => {
   if (error) {
     if (error.code === "auth/user-not-found") {
       toast.error("User Not Found !");
-    }
-    if (error.code === "auth/wrong-password") {
+    } else if (error.code === "auth/wrong-password") {
       toast.error("Password is Wrong !. ");
     }
+  } else {
+    navigate(from, { replace: true });
   }
 
   const onSubmit = async (data) => {
     await signInWithEmailAndPassword(data.Email, data.Password);
     reset();
-    navigate(from, { replace: true });
   };
 
   return (
