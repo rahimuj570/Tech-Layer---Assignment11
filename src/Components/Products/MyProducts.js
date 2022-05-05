@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.int";
 import useGetData from "../../Hooks/useGetData";
+import Loading from "../Loading";
 
 const MyProducts = () => {
   const [user] = useAuthState(auth);
@@ -49,7 +50,7 @@ const MyProducts = () => {
           Add New Products
         </button>
       </div>
-
+      {products.length === 0 && <Loading />}
       <div className="pb-20 relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-5/6 mx-auto smax:w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useGetHomeData from "../../Hooks/useGetHomeData";
+import Loading from "../Loading";
 import Product from "./Product";
 
 const Products = () => {
@@ -14,7 +15,7 @@ const Products = () => {
         </h1>
         <div className=" w-36 h-1 bg-slate-700 mx-auto rounded-lg" />
       </div>
-
+      {useGetHomeData()[0].length === 0 && <Loading />}
       <div className="px-5 py-3 lg:px-20 rounded grid  lg:gap-x-20 sm:gap-5 gap-4 md:grid-cols-3 sm:grid-cols-2 smax: grid-cols-2 xsmax:grid-cols-1  bg-zinc-50">
         {useGetHomeData()[0]?.map((product) => (
           <Product key={product._id} product={product} />

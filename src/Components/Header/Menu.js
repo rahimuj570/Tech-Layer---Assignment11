@@ -33,6 +33,7 @@ const Menu = () => {
             className={`flex md:static  absolute top-12 bg-indigo-500 duration-300 mdmax:h-screen mdmax:flex-col mdmax:w-4/6 z-20 mdmax:pt-5`}
           >
             <Link
+              onClick={() => setMenu(false)}
               to={"/"}
               className="mx-3 md:my-0 mdmax:my-2 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
             >
@@ -42,18 +43,21 @@ const Menu = () => {
             {user ? (
               <>
                 <Link
+                  onClick={() => setMenu(false)}
                   to={"/manage_products"}
                   className="mx-3 md:my-0 mdmax:my-2 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
                 >
                   Manage Items
                 </Link>
                 <Link
+                  onClick={() => setMenu(false)}
                   to={"/my_products"}
                   className="mx-3 md:my-0 mdmax:my-2 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
                 >
                   My Items
                 </Link>
                 <Link
+                  onClick={() => setMenu(false)}
                   to={"/add"}
                   className="mx-3 md:my-0 mdmax:my-2 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
                 >

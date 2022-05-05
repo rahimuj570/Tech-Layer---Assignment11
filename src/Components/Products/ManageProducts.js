@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useGetData from "../../Hooks/useGetData";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
+import Loading from "../Loading";
 
 const ManageProduct = () => {
   const navigate = useNavigate();
@@ -37,7 +38,6 @@ const ManageProduct = () => {
         </h1>
         <div className=" w-36 h-1 bg-indigo-400 mx-auto rounded-lg" />
       </div>
-
       <div className="mb-5 text-center">
         <button
           onClick={() => navigate("/add")}
@@ -47,14 +47,8 @@ const ManageProduct = () => {
         </button>
       </div>
 
-      <div
-        // onClick={() => {
-        //   console.log("kk");
-        //   console.log(refTooltip.current);
-        //   // ReactTooltip.hide();
-        // }}
-        className="pb-20 relative overflow-x-auto shadow-md sm:rounded-lg"
-      >
+      <div className="pb-20 relative overflow-x-auto shadow-md sm:rounded-lg">
+        {products.length === 0 && <Loading />}
         <table className="w-5/6 mx-auto smax:w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
