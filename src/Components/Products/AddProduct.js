@@ -112,6 +112,8 @@ const AddProduct = () => {
           <label htmlFor="supplier">Supplier Name</label>
           <input
             type={"text"}
+            disabled
+            value={user.displayName}
             placeholder="Product Supplier Name"
             id="supplier"
             className="text-sm border-2 bg-slate-200 my-1 p-1"

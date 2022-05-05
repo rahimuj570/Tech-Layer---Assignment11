@@ -67,7 +67,7 @@ const MyProducts = () => {
                 Quantity
               </th>
               <th scope="col" className="px-6 py-3">
-                Price
+                Price (TK)
               </th>
               <th scope="col" className="px-6 py-3">
                 <span className="sr-only">Delete</span>
@@ -85,12 +85,22 @@ const MyProducts = () => {
                   <td className="px-6 py-4">
                     <img className="w-10" src={image} alt="" />
                   </td>
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-                  >
-                    {name}
-                  </th>
+                  {name.length > 40 ? (
+                    <th
+                      title={name}
+                      scope="row"
+                      className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+                    >
+                      {name.length > 40 ? name.slice(0, 40) + " ..." : name}
+                    </th>
+                  ) : (
+                    <th
+                      scope="row"
+                      className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+                    >
+                      {name}
+                    </th>
+                  )}
                   <td className="px-6 py-4">{supplier}</td>
                   <td className="px-6 py-4">{quantity}</td>
                   <td className="px-6 py-4">{price}</td>

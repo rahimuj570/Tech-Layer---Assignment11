@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useGetData from "../../Hooks/useGetData";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -31,7 +31,7 @@ const ManageProduct = () => {
   };
   return (
     <>
-      <div className=" pb-10 mt-16 ">
+      <div className="pb-10 mt-16 ">
         <h1 className="pb-2 text-4xl text-center font-extrabold text-indigo-400">
           MANAGE PRODUCTS
         </h1>
@@ -47,7 +47,14 @@ const ManageProduct = () => {
         </button>
       </div>
 
-      <div className="pb-20 relative overflow-x-auto shadow-md sm:rounded-lg">
+      <div
+        // onClick={() => {
+        //   console.log("kk");
+        //   console.log(refTooltip.current);
+        //   // ReactTooltip.hide();
+        // }}
+        className="pb-20 relative overflow-x-auto shadow-md sm:rounded-lg"
+      >
         <table className="w-5/6 mx-auto smax:w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -64,7 +71,7 @@ const ManageProduct = () => {
                 Quantity
               </th>
               <th scope="col" className="px-6 py-3">
-                Price
+                Price (TK)
               </th>
               <th scope="col" className="px-6 py-3">
                 <span className="sr-only">Delete</span>
@@ -79,23 +86,30 @@ const ManageProduct = () => {
                   className="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700"
                 >
                   <td className="px-6 py-4">
-                    <img className="w-10" src={image} alt="" />
+                    <img className="w-10" src={image} alt={name} />
                   </td>
-                  <th
-                    scope="row"
-                    className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-                  >
-                    {name}
-                  </th>
+                  {name.length > 40 ? (
+                    <th
+                      title={name}
+                      scope="row"
+                      className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+                    >
+                      {name.length > 40 ? name.slice(0, 40) + " ..." : name}
+                    </th>
+                  ) : (
+                    <th
+                      scope="row"
+                      className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
+                    >
+                      {name}
+                    </th>
+                  )}
                   <td className="px-6 py-4">{supplier}</td>
                   <td className="px-6 py-4">{quantity}</td>
                   <td className="px-6 py-4">{price}</td>
                   <td className="px-6 py-4 text-right">
                     <div onClick={() => deleteAction(_id)}>
-                      <FaRegTrashAlt
-                        title="Delete"
-                        className="text-red-600 cursor-pointer hover:text-red-500 text-2xl"
-                      />
+                      <FaRegTrashAlt className="text-red-600 cursor-pointer hover:text-red-500 text-2xl" />
                     </div>
                   </td>
                 </tr>

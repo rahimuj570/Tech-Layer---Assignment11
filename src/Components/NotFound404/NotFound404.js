@@ -2,11 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Verify from "../User_Management/Verify";
 import NotFound from "./notFound.png";
+import "animate.css";
+
 const NotFound404 = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Verify />
       <div className=" pb-10 mt-16 ">
         <h1 className="pb-2 text-4xl text-center font-extrabold text-indigo-400">
           404 NOT FOUND
@@ -14,7 +15,7 @@ const NotFound404 = () => {
         <div className=" w-36 h-1 bg-indigo-400 mx-auto rounded-lg" />
       </div>
 
-      <div className="mb-20 sm:w-2/6 w-4/6 mx-auto">
+      <div className="animate__animated animate__slower animate__infinite animate__pulse mb-20 sm:w-2/6 w-4/6 mx-auto">
         <img src={NotFound} alt="" />
         <div className="mt-10 text-center">
           <button
