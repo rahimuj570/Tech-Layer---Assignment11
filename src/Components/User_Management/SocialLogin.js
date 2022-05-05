@@ -1,11 +1,15 @@
 import React from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { FcGoogle } from "react-icons/fc";
+import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.int";
 import Loading from "../Loading";
 
 const SocialLogin = () => {
+  const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
   // ======== Loading =============
@@ -17,6 +21,10 @@ const SocialLogin = () => {
   if (error) {
     toast.error("Something Went Wrong!");
   }
+  if (user) {
+    navigate(from, { replace: true });
+  }
+
   return (
     <>
       <div className="mt-10 md:w-2/6 sm:w-3/6 w-5/6 mx-auto flex items-center justify-center">

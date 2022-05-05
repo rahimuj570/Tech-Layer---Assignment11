@@ -22,20 +22,6 @@ const Login = () => {
     reset,
   } = useForm();
 
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/login", {
-  //     method: "POST",
-  //     body: JSON.stringify({
-  //       email: user?.email,
-  //     }),
-  //     headers: {
-  //       "Content-type": "application/json",
-  //     },
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => console.log("data"));
-  // }, [user]);
-
   // ========= Loading ============
   if (loading) {
     return <Loading />;
@@ -48,8 +34,6 @@ const Login = () => {
     } else if (error.code === "auth/wrong-password") {
       toast.error("Password is Wrong !. ");
     }
-  } else {
-    // navigate(from, { replace: true });
   }
 
   if (user) {

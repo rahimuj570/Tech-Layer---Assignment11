@@ -1,23 +1,36 @@
-import React from "react";
+import { signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.int";
-import useGetData from "../../Hooks/useGetData";
 import Loading from "../Loading";
 
 const MyProducts = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
-  const [products, setProducts] = useGetData();
+  const [products, setProducts] = useState([]);
+  // console.log(products[0].status);
+  console.log(products);
+  // ========= Fetch Data ==========
+  useEffect(() => {
+    const url = `http://localhost:5000/userProducts`;
+    fetch(url, {
+      headers: {
+        authorization: `${user.uid} ${user.email} ${localStorage.getItem(
+          "accessToken"
+        )}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
 
   // ======== Delete Action =======
   const deleteAction = (id) => {
     const confirm = prompt(
-      `Are you sure to delete (${
-        products.find((product) => product._id === id).name
-      })? Then type "DELETE" to confirm your action.`
+      `Are you sure to delete this product? Then type "DELETE" to confirm your action.`
     ).toLocaleUpperCase();
     if (confirm === "DELETE") {
       fetch(`http://localhost:5000/delete/${id}`, {
@@ -33,6 +46,15 @@ const MyProducts = () => {
       return;
     }
   };
+
+  if (products?.length === 0) {
+    return <Loading />;
+  }
+  if (products[0].status === "unAuthorization") {
+    toast.error("Something Went Wrong. Please Login Again.");
+    signOut(auth);
+    return;
+  }
   return (
     <>
       <div className=" pb-10 mt-16 ">
@@ -50,7 +72,6 @@ const MyProducts = () => {
           Add New Products
         </button>
       </div>
-      {products.length === 0 && <Loading />}
       <div className="pb-20 relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-5/6 mx-auto smax:w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -76,9 +97,8 @@ const MyProducts = () => {
             </tr>
           </thead>
           <tbody>
-            {products
-              .filter((pd) => pd.uid === user.uid)
-              ?.map(({ _id, name, price, supplier, image, quantity }) => (
+            {products?.map(
+              ({ _id, name, price, supplier, image, quantity }) => (
                 <tr
                   key={_id}
                   className="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700"
@@ -114,7 +134,8 @@ const MyProducts = () => {
                     </div>
                   </td>
                 </tr>
-              ))}
+              )
+            )}
           </tbody>
         </table>
       </div>

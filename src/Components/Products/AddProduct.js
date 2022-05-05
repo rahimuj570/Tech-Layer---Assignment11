@@ -112,8 +112,8 @@ const AddProduct = () => {
           <input
             title="You Can't Edit This Input."
             type={"text"}
-            disabled
-            value={user.displayName}
+            readOnly
+            defaultValue={user.displayName}
             placeholder="Product Supplier Name"
             id="supplier"
             className="text-sm border-2 bg-slate-200 border-sky-300 my-1 p-1"
