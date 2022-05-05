@@ -19,7 +19,7 @@ const HeroSlider = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
   };
   return (
     <>
@@ -33,15 +33,15 @@ const HeroSlider = () => {
         <Slider {...settings}>
           {/* ======= Slider Item 1 ======== */}
           <div className="w-full sm:h-70 ">
-            <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
-              <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
-                <h2 className="text-4xl font-bold">
+            <div className="smax:flex-col smax:py-5 px-10 xsmax:px-0 h-full items-center flex justify-between sm:justify-evenly ">
+              <div className="py-2 basis-3/6 sm:order-1 order-2 leading-10 ">
+                <h2 className="smax:mb-2 xsmax:text-2xl text-4xl font-bold">
                   Meetion MT-CHR15 E-Sport Gaming Chair
                 </h2>
-                <p className="text-red-400 font-bold">
+                <p className="smax:text-sm text-red-400 font-bold">
                   Regular Price: 20,000 TK
                 </p>
-                <p className="text-green-500 font-bold text-2xl">
+                <p className="text-green-500 font-bold text-2xl smax:text-xl">
                   Eid Price: 10,000 TK
                 </p>
               </div>
@@ -54,15 +54,15 @@ const HeroSlider = () => {
           </div>
           {/* ======= Slider Item 2 ======== */}
           <div className="w-full sm:h-70 ">
-            <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
+            <div className="smax:flex-col smax:py-5 px-10 xsmax:px-0 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
-                <h2 className="text-4xl font-bold">
+                <h2 className="smax:mb-2 xsmax:text-2xl text-4xl font-bold">
                   Realme Watch S Global Version
                 </h2>
-                <p className="text-red-400 font-bold">
+                <p className="smax:text-sm text-red-400 font-bold">
                   Regular Price: 5,000 TK
                 </p>
-                <p className="text-green-500 font-bold text-2xl">
+                <p className="text-green-500 font-bold text-2xl smax:text-xl">
                   Eid Price: 2,000 TK
                 </p>
               </div>
@@ -75,19 +75,19 @@ const HeroSlider = () => {
           </div>
           {/* ======= Slider Item 3 ======== */}
           <div className="w-full sm:h-70 ">
-            <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
+            <div className="smax:flex-col smax:py-5 px-10 xsmax:px-0 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
                 <h2
                   title="AMD Ryzen 5 5600X ASUS TUF GAMING B550M-E 16GB RAM 500GB SSD
                   RTX 3060 TI 8GB GRAPHICS CARD BUDGET PC"
-                  className="text-4xl font-extrabold"
+                  className="smax:mb-2 xsmax:text-2xl text-4xl font-bold"
                 >
                   Ryzen 5 Gaming Monster...
                 </h2>
-                <p className="text-red-400 font-bold">
+                <p className="smax:text-sm text-red-400 font-bold">
                   Regular Price: 70,000 TK
                 </p>
-                <p className="text-green-500 font-bold text-2xl">
+                <p className="text-green-500 font-bold text-2xl smax:text-xl">
                   Eid Price: 40,000 TK
                 </p>
               </div>
@@ -100,15 +100,15 @@ const HeroSlider = () => {
           </div>
           {/* ======= Slider Item 4 ======== */}
           <div className="w-full sm:h-70 ">
-            <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
+            <div className="smax:flex-col smax:py-5 px-10 xsmax:px-0 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
-                <h2 className="text-4xl font-bold">
+                <h2 className="smax:mb-2 xsmax:text-2xl text-4xl font-bold">
                   Turtle Beach Recon 50 GAMING HEADSET
                 </h2>
-                <p className="text-red-400 font-bold">
+                <p className="smax:text-sm text-red-400 font-bold">
                   Regular Price: 2,000 TK
                 </p>
-                <p className="text-green-500 font-bold text-2xl">
+                <p className="text-green-500 font-bold text-2xl smax:text-xl">
                   Eid Price: 800 TK
                 </p>
               </div>
@@ -121,15 +121,15 @@ const HeroSlider = () => {
           </div>
           {/* ======= Slider Item 5 ======== */}
           <div className="w-full sm:h-70 ">
-            <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
+            <div className="smax:flex-col smax:py-5 px-10 xsmax:px-0 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
-                <h2 className="text-4xl font-bold">
+                <h2 className="smax:mb-2 xsmax:text-2xl text-4xl font-bold">
                   Sony PlayStation 5 Gaming Console
                 </h2>
-                <p className="text-red-400 font-bold">
+                <p className="smax:text-sm text-red-400 font-bold">
                   Regular Price: 80,000 TK
                 </p>
-                <p className="text-green-500 font-bold text-2xl">
+                <p className="text-green-500 font-bold text-2xl smax:text-xl">
                   Eid Price: 40,000 TK
                 </p>
               </div>
@@ -142,18 +142,18 @@ const HeroSlider = () => {
           </div>
           {/* ======= Slider Item 6 ======== */}
           <div className="w-full sm:h-70 ">
-            <div className="smax:flex-col smax:py-5 px-10 h-full items-center flex justify-between sm:justify-evenly ">
+            <div className="smax:flex-col smax:py-5 px-10 xsmax:px-0 h-full items-center flex justify-between sm:justify-evenly ">
               <div className="basis-3/6 sm:order-1 order-2 leading-10 ">
                 <h2
                   title="God of War, Zero Dawn, Ghost of Tsusima, Last of Us"
-                  className="text-4xl font-bold"
+                  className="smax:mb-2 xsmax:text-2xl text-4xl font-bold"
                 >
                   Four Genuine Action in One Pack...
                 </h2>
-                <p className="text-red-400 font-bold">
+                <p className="smax:text-sm text-red-400 font-bold">
                   Regular Price: 8,000 TK
                 </p>
-                <p className="text-green-500 font-bold text-2xl">
+                <p className="text-green-500 font-bold text-2xl smax:text-xl">
                   Eid Price: 4,000 TK
                 </p>
               </div>

@@ -7,7 +7,7 @@ module.exports = {
       hand: ["Patrick Hand", "cursive"],
     },
     screens: {
-      xsmax: { max: "340px" },
+      xsmax: { max: "360px" },
       smax: { max: "640px" },
       mdmax: { max: "768px" },
 
