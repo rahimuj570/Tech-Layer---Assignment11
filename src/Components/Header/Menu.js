@@ -39,6 +39,13 @@ const Menu = () => {
             >
               Home
             </Link>
+            <Link
+              onClick={() => setMenu(false)}
+              to={"/blogs"}
+              className="mx-3 md:my-0 mdmax:my-2 p-2 rounded hover:bg-indigo-400 duration-300 cursor-pointer font-semibold shadow"
+            >
+              Blogs
+            </Link>
 
             {user ? (
               <>
@@ -64,7 +71,10 @@ const Menu = () => {
                   Add Items
                 </Link>
                 <li
-                  onClick={() => signOut(auth)}
+                  onClick={() => {
+                    setMenu(false);
+                    signOut(auth);
+                  }}
                   className="mx-3 md:my-0 mdmax:my-2 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4"
                 >
                   Logout
@@ -72,7 +82,10 @@ const Menu = () => {
               </>
             ) : (
               <li
-                onClick={() => navigate("/login")}
+                onClick={() => {
+                  setMenu(false);
+                  navigate("/login");
+                }}
                 className="mx-3 md:my-0 mdmax:my-2 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4"
               >
                 Login

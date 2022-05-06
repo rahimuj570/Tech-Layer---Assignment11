@@ -15,6 +15,7 @@ import AddProduct from "./Components/Products/AddProduct";
 import MyProducts from "./Components/Products/MyProducts";
 import NotFound404 from "./Components/NotFound404/NotFound404";
 import RequireAuth from "./Components/User_Management/RequireAuth";
+import Blogs from "./Components/Blogs";
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="*" element={<NotFound404 />}></Route>
       </Routes>
       <Footer />

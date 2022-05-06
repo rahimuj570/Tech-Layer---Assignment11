@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## [Live Site](https://github.com/facebook/create-react-app).
+
+## [Stackoverflow Question](https://stackoverflow.com/questions/72132015/how-to-prevent-duplication-of-react-toastify-in-functional-components).
 
 ## Available Scripts
 
