@@ -49,18 +49,7 @@ const MyProducts = () => {
   };
 
   if (products?.length === 0) {
-    return (
-      <>
-        <Loading />
-        {setTimeout(() => {
-          toast.error(
-            `Sorry to say dear ${user?.displayName}, You Haven't Any Products. \n Or may be your connection is not stable`,
-            { autoClose: 10000, pauseOnHover: false }
-          );
-          navigate("/add");
-        }, 10000)}
-      </>
-    );
+    return <Loading />;
   }
   if (products[0].status === "unAuthorization") {
     toast.error("Something Went Wrong. Please Login Again.");
