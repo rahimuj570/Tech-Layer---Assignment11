@@ -70,15 +70,20 @@ const Menu = () => {
                 >
                   Add Items
                 </Link>
-                <li
-                  onClick={() => {
-                    setMenu(false);
-                    signOut(auth);
-                  }}
-                  className="mx-3 md:my-0 mdmax:my-2 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4"
-                >
-                  Logout
-                </li>
+                <div className="relative">
+                  <li
+                    onClick={() => {
+                      setMenu(false);
+                      signOut(auth);
+                    }}
+                    className="mx-3 md:my-0 mdmax:my-2 py-2 rounded bg-white hover:bg-sky-200 text-slate-600 duration-300 cursor-pointer font-bold px-4"
+                  >
+                    Logout
+                  </li>
+                  <p className="cursor-pointer hover:opacity-100 duration-300 md:opacity-5 mdmax:opacity-100 top-12 md:bg-indigo-400 bg-slate-700 px-2 py-1 rounded-full right-2 absolute">
+                    Hi {user?.displayName}!
+                  </p>
+                </div>
               </>
             ) : (
               <li
