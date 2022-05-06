@@ -70,7 +70,10 @@ const Signup = () => {
               placeholder="Your Name"
               className="text-sm border-2 bg-slate-200 my-1 p-1"
               id="name"
-              {...register("Name", { required: true, pattern: /^[A-Za-z]+$/i })}
+              {...register("Name", {
+                required: true,
+                pattern: /[^A-Za-z0-9_'-]/gi,
+              })}
             />
             {errors.Name?.type === "required" && (
               <p className="text-sm text-red-400">* Please Input Your Name</p>

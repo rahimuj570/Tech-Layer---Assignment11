@@ -80,8 +80,9 @@ const Menu = () => {
                   >
                     Logout
                   </li>
-                  <p className="cursor-pointer hover:opacity-100 duration-300 md:opacity-5 mdmax:opacity-100 top-12 md:bg-indigo-400 bg-slate-700 px-2 py-1 rounded-full right-2 absolute">
-                    Hi {user?.displayName}!
+                  <p className="cursor-pointer hover:opacity-100 duration-300 md:opacity-5 mdmax:opacity-100 top-12 md:bg-indigo-400 bg-slate-700 px-2 py-1 rounded right-2 absolute">
+                    <span className="font-bold">Hi</span>{" "}
+                    {user?.displayName.split(" ").pop()}!
                   </p>
                 </div>
               </>
