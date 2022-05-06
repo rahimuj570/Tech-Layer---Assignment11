@@ -13,13 +13,13 @@ const Update = () => {
 
   // ======== Get Selected Product =======
   useEffect(() => {
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://tranquil-hamlet-69916.herokuapp.com/product/${id}`;
     fetch(url).then((res) => res.json().then((data) => setSinglePD(data)));
   }, [reFetch]);
 
   // ========= Update Quantity =========
   const quantityUpdateAction = (latestData) => {
-    const url = `http://localhost:5000/update/${id}`;
+    const url = `https://tranquil-hamlet-69916.herokuapp.com/update/${id}`;
     fetch(url, {
       method: "put",
       headers: { "content-type": "application/json" },

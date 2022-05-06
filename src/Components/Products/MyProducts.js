@@ -16,7 +16,7 @@ const MyProducts = () => {
   console.log(products);
   // ========= Fetch Data ==========
   useEffect(() => {
-    const url = `http://localhost:5000/userProducts`;
+    const url = `https://tranquil-hamlet-69916.herokuapp.com/userProducts`;
     fetch(url, {
       headers: {
         authorization: `${user.uid} ${user.email} ${localStorage.getItem(
@@ -34,7 +34,7 @@ const MyProducts = () => {
       `Are you sure to delete this product? Then type "DELETE" to confirm your action.`
     ).toLocaleUpperCase();
     if (confirm === "DELETE") {
-      fetch(`http://localhost:5000/delete/${id}`, {
+      fetch(`https://tranquil-hamlet-69916.herokuapp.com/delete/${id}`, {
         method: "DELETE",
       }).then((res) =>
         res.json().then((data) => {
@@ -49,7 +49,18 @@ const MyProducts = () => {
   };
 
   if (products?.length === 0) {
-    return <Loading />;
+    return (
+      <>
+        <Loading />
+        {setTimeout(() => {
+          toast.error(
+            `Sorry to say dear ${user?.displayName}, You Haven't Any Products. \n Or may be your connection is not stable`,
+            { autoClose: 10000, pauseOnHover: false }
+          );
+          navigate("/add");
+        }, 10000)}
+      </>
+    );
   }
   if (products[0].status === "unAuthorization") {
     toast.error("Something Went Wrong. Please Login Again.");

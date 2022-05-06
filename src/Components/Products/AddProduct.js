@@ -16,7 +16,7 @@ const AddProduct = () => {
   } = useForm();
   const onSubmit = async (data) => {
     data.uid = user.uid;
-    const url = `http://localhost:5000/add`;
+    const url = `https://tranquil-hamlet-69916.herokuapp.com/add`;
     fetch(url, {
       method: "POST",
       headers: {
