@@ -5,6 +5,7 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.int";
+import UseTitle from "../../Hooks/UseTitle";
 import Loading from "../Loading";
 import SocialLogin from "./SocialLogin";
 
@@ -60,6 +61,7 @@ const Login = () => {
 
   return (
     <>
+      <UseTitle title={"Login"} />
       <div className=" pb-10 mt-16 ">
         <h1 className="pb-2 text-4xl text-center font-extrabold text-indigo-400">
           LOGIN

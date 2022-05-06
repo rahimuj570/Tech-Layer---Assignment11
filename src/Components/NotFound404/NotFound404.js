@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import Verify from "../User_Management/Verify";
 import NotFound from "./notFound.png";
 import "animate.css";
+import UseTitle from "../../Hooks/UseTitle";
 
 const NotFound404 = () => {
   const navigate = useNavigate();
   return (
     <>
+      <UseTitle title={"404"} />
       <div className=" pb-10 mt-16 ">
         <h1 className="pb-2 text-4xl text-center font-extrabold text-indigo-400">
           404 NOT FOUND

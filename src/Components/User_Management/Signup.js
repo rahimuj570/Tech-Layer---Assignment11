@@ -10,6 +10,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 import Loading from "../Loading";
+import UseTitle from "../../Hooks/UseTitle";
 
 const Signup = () => {
   let location = useLocation();
@@ -50,6 +51,7 @@ const Signup = () => {
 
   return (
     <>
+      <UseTitle title={"Signup"} />
       <div className=" pb-10 mt-16 ">
         <h1 className="pb-2 text-4xl text-center font-extrabold text-indigo-400">
           REGISTER

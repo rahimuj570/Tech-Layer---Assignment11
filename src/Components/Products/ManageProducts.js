@@ -4,6 +4,7 @@ import useGetData from "../../Hooks/useGetData";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
 import Loading from "../Loading";
+import UseTitle from "../../Hooks/UseTitle";
 
 const ManageProduct = () => {
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ const ManageProduct = () => {
   };
   return (
     <>
+      <UseTitle title={"Manage Products"} />
       <div className="pb-10 mt-16 ">
         <h1 className="pb-2 text-4xl text-center font-extrabold text-indigo-400">
           MANAGE PRODUCTS
