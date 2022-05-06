@@ -49,7 +49,22 @@ const MyProducts = () => {
   };
 
   if (products?.length === 0) {
-    return <Loading />;
+    return (
+      <>
+        <div className="px-1 absolute inset-x-0 h-screen flex flex-col items-center justify-center">
+          <h1 className="mb-2 text-center font-extrabold text-2xl">
+            <span className="text-4xl text-red-600">*</span> May Be You Have{" "}
+            <span className="text-3xl text-red-400">NO</span> Products. <br />{" "}
+            Please Add One
+          </h1>
+          <h1 className="text-center font-extrabold text-2xl">
+            <span className="text-4xl text-red-600">*</span> Or Wait, <br /> May
+            Be Your Connection is not Stable.
+          </h1>
+        </div>
+        <Loading />
+      </>
+    );
   }
   if (products[0].status === "unAuthorization") {
     toast.error("Something Went Wrong. Please Login Again.");
