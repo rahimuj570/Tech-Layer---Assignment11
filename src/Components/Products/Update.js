@@ -9,18 +9,12 @@ const Update = () => {
   const { id } = useParams();
   const [singlePD, setSinglePD] = useState([]);
   const { _id, name, quantity, price, image, supplier, info } = singlePD;
-  const [stockStatus, setStockStatus] = useState(true);
   const [reFetch, setReFetch] = useState(false);
 
   // ======== Get Selected Product =======
   useEffect(() => {
     const url = `http://localhost:5000/product/${id}`;
     fetch(url).then((res) => res.json().then((data) => setSinglePD(data)));
-    if (quantity > 0) {
-      setStockStatus(true);
-    } else {
-      setStockStatus(false);
-    }
   }, [reFetch]);
 
   // ========= Update Quantity =========
@@ -88,7 +82,9 @@ const Update = () => {
                 </li>
                 <li>
                   <span className="font-bold font-signika">Stock: </span>
-                  <span>{stockStatus ? "Available" : "Stock Out"}</span>
+                  <span>
+                    {`${parseInt(quantity) < 1 ? "Stock Out" : "Available"}`}
+                  </span>
                 </li>
               </ul>
               <p className="text-xl">{info}</p>
@@ -108,26 +104,6 @@ const Update = () => {
                   type="number"
                   placeholder="Input Product Quantity to Deliver/Add-Stock"
                 />
-                {/* <input
-                  title="Input Product Quantity to Deliver/Add-Stock"
-                  className="w-full  border-2  rounded-md  p-1 border-sky-500"
-                  type="number"
-                  placeholder="Input Product Quantity to Deliver/Add-Stock"
-                  {...register("quantity", {
-                    required: true,
-                    pattern: /^[1-9]/,
-                  })}
-                />
-                {errors.quantity?.type === "required" && (
-                  <p className="text-sm text-red-400">
-                    * Please Input The Quantity
-                  </p>
-                )}
-                {errors.quantity?.type === "pattern" && (
-                  <p className="text-sm text-red-400">
-                    * Please Input a Valid Data
-                  </p>
-                )} */}
                 <div className="mt-2">
                   <button
                     onClick={() => quantityAction("delivery")}
